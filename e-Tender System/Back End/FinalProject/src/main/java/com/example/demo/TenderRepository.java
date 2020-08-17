@@ -11,11 +11,11 @@ import org.springframework.stereotype.Repository;
 public interface TenderRepository extends JpaRepository<TenderInfo,Integer> {
 
 	
-	public List<TenderInfo> findByClassification(String classi);
-	public TenderInfo findByTenderid(String t);
-	public List<TenderInfo> findByStatus(String sta);
+	public List<TenderInfo> findByClassification(StenderRepositorying classi);
+	public TenderInfo findByTenderid(StenderRepositorying t);
+	public List<TenderInfo> findByStatus(StenderRepositorying sta);
 	
 	
-	@Query(value="SELECT * FROM tenderinfo WHERE closingdate > :actdate",nativeQuery=true)
-    public List<TenderInfo> findByDate(@Param("actdate") String date);
+	@Query(value="SELECT * FROM tenderinfo WHERE closingdate > :actdate",nativeQuery=tenderRepositoryue)
+    public List<TenderInfo> findByDate(@Param("actdate") StenderRepositorying date);
 }

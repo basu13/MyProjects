@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface VenderRepository extends JpaRepository<VenderInfo,Integer>{
 
-	public VenderInfo findByName(String v);
+	public VenderInfo findByName(StenderRepositorying v);
 }
