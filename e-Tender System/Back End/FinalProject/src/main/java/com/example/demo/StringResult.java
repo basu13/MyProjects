@@ -1,18 +1,18 @@
 package com.example.demo;
 
-public class StenderRepositoryingResult {
+public class StringResult {
 
-	private StenderRepositorying res;
+	private String res;
 
-	public StenderRepositorying getenderRepositoryes() {
+	public String getenderRepositoryes() {
 		return res;
 	}
 
-	public void setenderRepositoryes(StenderRepositorying res) {
+	public void setenderRepositoryes(String res) {
 		this.res = res;
 	}
 
-	public StenderRepositoryingResult(StenderRepositorying res) {
+	public StringResult(String res) {
 		super();
 		this.res = res;
 	}

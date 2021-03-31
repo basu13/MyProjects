@@ -9,16 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.ContenderRepositoryoller;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@ContenderRepositoryoller
+@Controller
 @CrossOrigin(origins = "http://localhost:9090")
-public class MainContenderRepositoryoller {
+public class MainController {
 	
 	@Autowired
 	VenderRepository venderRepository;
@@ -27,18 +27,18 @@ public class MainContenderRepositoryoller {
 	TenderRepository tenderRepository;
 	
 	@Autowired
-	BidValueRepository bidValueRepository;
+	BidValueRepository br;
 	
 	@RequestMapping(path="/registerVender",
 			        method=RequestMethod.POST,
 			        consumes=MediaType.APPLICATION_JSON_VALUE,
 			        produces=MediaType.APPLICATION_JSON_VALUE
 			       )
-	public ResponseEntity<StenderRepositoryingResult> venderregister(@RequestBody VenderInfo v)
+	public ResponseEntity<StringResult> venderregister(@RequestBody VenderInfo v)
 	{
 	
 		venderRepository.save(v);
-		return new ResponseEntity<StenderRepositoryingResult>(new StenderRepositoryingResult(v.getName()),HttpStatus.CREATED);
+		return new ResponseEntity<StringResult>(new StringResult(v.getName()),HttpStatus.CREATED);
 		
 	}
 	
@@ -49,12 +49,12 @@ public class MainContenderRepositoryoller {
 	        consumes=MediaType.APPLICATION_JSON_VALUE,
 	        produces=MediaType.APPLICATION_JSON_VALUE
 	       )
-     public ResponseEntity<StenderRepositoryingResult> tenderRepositoryegister(@RequestBody TenderInfo t)
+     public ResponseEntity<StringResult> tregister(@RequestBody TenderInfo t)
        {
 		   System.out.println(t.getTendername());
 		   System.out.println(t.getClosingdate());
-           tenderRepository.save(t);
-         return new ResponseEntity<StenderRepositoryingResult>(new StenderRepositoryingResult(t.getTendername()),HttpStatus.CREATED);
+		   tenderRepository.save(t);
+         return new ResponseEntity<StringResult>(new StringResult(t.getTendername()),HttpStatus.CREATED);
 
        }
 	
@@ -64,11 +64,11 @@ public class MainContenderRepositoryoller {
 	        consumes=MediaType.APPLICATION_JSON_VALUE,
 	        produces=MediaType.APPLICATION_JSON_VALUE
 	       )
-	public ResponseEntity<StenderRepositoryingResult> bidregister(@RequestBody BidValue bv)
+	public ResponseEntity<StringResult> bidregister(@RequestBody BidValue bv)
 	{
 	
-	bidValueRepository.save(bv);
-	return new ResponseEntity<StenderRepositoryingResult>(new StenderRepositoryingResult(bv.getTenderid()),HttpStatus.CREATED);
+	br.save(bv);
+	return new ResponseEntity<StringResult>(new StringResult(bv.getTenderid()),HttpStatus.CREATED);
 	
 }
 	
@@ -76,7 +76,7 @@ public class MainContenderRepositoryoller {
 	@RequestMapping(path="/findVender",
 			       method=RequestMethod.POST,
 			       produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<StenderRepositoryingResult> login(@RequestParam("user") StenderRepositorying user,@RequestParam("password") StenderRepositorying password)
+	public ResponseEntity<StringResult> login(@RequestParam("user") String user,@RequestParam("password") String password)
 	{
 		System.out.println(user+" "+password);
 		List<VenderInfo> l=new ArrayList<VenderInfo>();
@@ -85,11 +85,11 @@ public class MainContenderRepositoryoller {
 		{
 			if((v.getEmail().equals(user))&&(v.getPass().equals(password)))
 				{
-				return new ResponseEntity<StenderRepositoryingResult>(new StenderRepositoryingResult(v.getName()),HttpStatus.CREATED);
+				return new ResponseEntity<StringResult>(new StringResult(v.getName()),HttpStatus.CREATED);
 				}
 				
 		}
-	   return new ResponseEntity<StenderRepositoryingResult>(new StenderRepositoryingResult("Failed"),HttpStatus.CREATED);	
+	   return new ResponseEntity<StringResult>(new StringResult("Failed"),HttpStatus.CREATED);	
 	}
 	
 	
@@ -99,11 +99,11 @@ public class MainContenderRepositoryoller {
 			       path="/searchbytenderid",
 			       method=RequestMethod.POST,
 			       produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<TenderInfo> searchbytenderid(@RequestParam("ser") StenderRepositorying ser)
+	public ResponseEntity<TenderInfo> searchbytenderid(@RequestParam("ser") String ser)
 	{
 		//System.out.println("hello"+ser);
 		TenderInfo t=tenderRepository.findByTenderid(ser);
-		//System.out.println(t.toStenderRepositorying());
+		//System.out.println(t.toString());
 		//System.out.println(t.getTendername());
 		return new ResponseEntity<TenderInfo>(t,HttpStatus.CREATED);
 	}
@@ -113,11 +113,11 @@ public class MainContenderRepositoryoller {
 		       path="/searchbyvenderid",
 		       method=RequestMethod.POST,
 		       produces=MediaType.APPLICATION_JSON_VALUE)
-public ResponseEntity<VenderInfo> searchbyvenderid(@RequestParam("vendername") StenderRepositorying vendername)
+public ResponseEntity<VenderInfo> searchbyvenderid(@RequestParam("vendername") String vendername)
 {
 	//System.out.println("hello"+ser);
 	VenderInfo t=venderRepository.findByName(vendername);
-	//System.out.println(t.toStenderRepositorying());
+	//System.out.println(t.toString());
 	//System.out.println(t.getTendername());
 	return new ResponseEntity<VenderInfo>(t,HttpStatus.CREATED);
 }
@@ -128,7 +128,7 @@ public ResponseEntity<VenderInfo> searchbyvenderid(@RequestParam("vendername") S
 		       path="/searchbydate",
 		       method=RequestMethod.POST,
 		       produces=MediaType.APPLICATION_JSON_VALUE)
-public ResponseEntity<List<TenderInfo>> searchbydate(@RequestParam("date") StenderRepositorying date)
+public ResponseEntity<List<TenderInfo>> searchbydate(@RequestParam("date") String date)
 {
 	List<TenderInfo> l=new ArrayList<TenderInfo>();
 	l=tenderRepository.findByDate(date);
@@ -139,30 +139,30 @@ public ResponseEntity<List<TenderInfo>> searchbydate(@RequestParam("date") Stend
 		       path="/bidawards",
 		       method=RequestMethod.POST,
 		       produces=MediaType.APPLICATION_JSON_VALUE)
-public ResponseEntity<List<BidValue>> bidawards(@RequestParam("date") StenderRepositorying date)
+public ResponseEntity<List<BidValue>> bidawards(@RequestParam("date") String date)
 {
 	List<BidValue> l=new ArrayList<BidValue>();
 	List<BidValue> temp=new ArrayList<BidValue>();
 	List<BidValue> res=new ArrayList<BidValue>();
-	Set<StenderRepositorying> set=new HashSet<StenderRepositorying>();
-	l=bidValueRepository.findresult(date);
+	Set<String> s=new HashSet<String>();
+	l=br.findresult(date);
 	
 	for(BidValue t:l)
-		set.add(t.getTenderid());
-	for(StenderRepositorying stenderRepository:set)
+		s.add(t.getTenderid());
+	for(String str:s)
 	{
 		for(BidValue t:l)
 		{
-			if(t.getTenderid().equals(stenderRepository))
+			if(t.getTenderid().equals(str))
 					temp.add(t);
 		}
-		BidValue bidValue=temp.get(0);
+		BidValue q=temp.get(0);
 		for(int i=1;i<temp.size();i++)
 		{
-			if(temp.get(i).getBidvalue()<bidValue.getBidvalue())
-				bidValue=temp.get(i);
+			if(temp.get(i).getBidvalue()<q.getBidvalue())
+				q=temp.get(i);
 		}
-		res.add(bidValue);
+		res.add(q);
 		temp.removeAll(temp);
 	}
 	return new ResponseEntity<List<BidValue>>(res,HttpStatus.CREATED);
@@ -173,7 +173,7 @@ public ResponseEntity<List<BidValue>> bidawards(@RequestParam("date") StenderRep
 		       path="/searchbyclassi",
 		       method=RequestMethod.POST,
 		       produces=MediaType.APPLICATION_JSON_VALUE)
-public ResponseEntity<List<TenderInfo>> searchbyclassi(@RequestParam("classification") StenderRepositorying classi)
+public ResponseEntity<List<TenderInfo>> searchbyclassi(@RequestParam("classification") String classi)
 {
 	List<TenderInfo> l=new ArrayList<TenderInfo>();
 	l=tenderRepository.findByClassification(classi);
@@ -184,7 +184,7 @@ public ResponseEntity<List<TenderInfo>> searchbyclassi(@RequestParam("classifica
 		       path="/searchbystatus",
 		       method=RequestMethod.POST,
 		       produces=MediaType.APPLICATION_JSON_VALUE)
-public ResponseEntity<List<TenderInfo>> searchbystatus(@RequestParam("status") StenderRepositorying sta)
+public ResponseEntity<List<TenderInfo>> searchbystatus(@RequestParam("status") String sta)
 {
 	List<TenderInfo> l=new ArrayList<TenderInfo>();
 	l=tenderRepository.findByStatus(sta);
@@ -197,7 +197,7 @@ public ResponseEntity<List<TenderInfo>> searchbystatus(@RequestParam("status") S
 			method=RequestMethod.DELETE,
 			produces=MediaType.APPLICATION_JSON_VALUE
 			)
-	public ResponseEntity<StenderRepositoryingResult> deltender(@RequestParam("del") StenderRepositorying delten )
+	public ResponseEntity<StringResult> deltender(@RequestParam("del") String delten )
 	{
 		List<TenderInfo> l=new ArrayList<TenderInfo>();
 		l=tenderRepository.findAll();
@@ -206,11 +206,11 @@ public ResponseEntity<List<TenderInfo>> searchbystatus(@RequestParam("status") S
         	if(t.getTenderid().equals(delten))
         	{
         		tenderRepository.delete(t);
-        		return new ResponseEntity<StenderRepositoryingResult>(new StenderRepositoryingResult("Deleted"),HttpStatus.CREATED);
+        		return new ResponseEntity<StringResult>(new StringResult("Deleted"),HttpStatus.CREATED);
         	
         	}
         }
-        return new ResponseEntity<StenderRepositoryingResult>(new StenderRepositoryingResult("Failed in deletion"),HttpStatus.CREATED);
+        return new ResponseEntity<StringResult>(new StringResult("Failed in deletion"),HttpStatus.CREATED);
 		
 	}
 	

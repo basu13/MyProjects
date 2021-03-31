@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BidValueRepository extends JpaRepository<BidValue,Integer>
 {
-	@Query(value="SELECT * FROM bidtable WHERE closingdate < :actdate",nativeQuery=tenderRepositoryue)
-    public List<BidValue> findresult(@Param("actdate") StenderRepositorying date);
+	@Query(value="SELECT * FROM bidtable WHERE closingdate < :actdate",nativeQuery=true)
+    public List<BidValue> findresult(@Param("actdate") String date);
 
 }

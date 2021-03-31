@@ -10,60 +10,60 @@ import javax.persistence.Table;
 @Table(name="venderinfo")
 public class VenderInfo {
 	@Id
-	@GeneratedValue(stenderRepositoryategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@javax.persistence.Column(name= "idvenderinfo")
 	private int id;
 	
 	@javax.persistence.Column(name= "email")
-	private StenderRepositorying email;
+	private String email;
 	
 	@javax.persistence.Column(name= "cemail")
-	private StenderRepositorying cemail;
+	private String cemail;
 	
 	@javax.persistence.Column(name="pass")
-	private StenderRepositorying pass;
+	private String pass;
 	
 	@javax.persistence.Column(name= "phnumber")
-	private StenderRepositorying phnumber;
+	private String phnumber;
 	
 	@javax.persistence.Column(name= "cname")
-	private StenderRepositorying cname;
+	private String cname;
 	
 	@javax.persistence.Column(name= "regno")
-	private StenderRepositorying regno;
+	private String regno;
 	
 	@javax.persistence.Column(name= "regaddr")
-	private StenderRepositorying regaddr;
+	private String regaddr;
 	
 	@javax.persistence.Column(name= "citizen")
-	private StenderRepositorying citizen;
+	private String citizen;
 	
 	@javax.persistence.Column(name= "city")
-	private StenderRepositorying city;
+	private String city;
 	
 	@javax.persistence.Column(name= "state")
-	private StenderRepositorying state;
+	private String state;
 	
 	@javax.persistence.Column(name= "pincode")
-	private StenderRepositorying pincode;
+	private String pincode;
 	
 	@javax.persistence.Column(name= "pannumber")
-	private StenderRepositorying pannumber;
+	private String pannumber;
 	
 	@javax.persistence.Column(name= "eyear")
-	private StenderRepositorying eyear;
+	private String eyear;
 	
 	@javax.persistence.Column(name= "name")
-	private StenderRepositorying name;
+	private String name;
 	
 	@javax.persistence.Column(name= "dob")
-	private StenderRepositorying dob;
+	private String dob;
 	
 	@javax.persistence.Column(name= "des")
-	private StenderRepositorying des;
+	private String des;
 	
 	@javax.persistence.Column(name= "phone")
-	private StenderRepositorying phone;
+	private String phone;
 
 	public int getId() {
 		return id;
@@ -73,139 +73,139 @@ public class VenderInfo {
 		this.id = id;
 	}
 
-	public StenderRepositorying getEmail() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(StenderRepositorying email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	public StenderRepositorying getCemail() {
+	public String getCemail() {
 		return cemail;
 	}
 
-	public void setCemail(StenderRepositorying cemail) {
+	public void setCemail(String cemail) {
 		this.cemail = cemail;
 	}
 
-	public StenderRepositorying getPass() {
+	public String getPass() {
 		return pass;
 	}
 
-	public void setPass(StenderRepositorying pass) {
+	public void setPass(String pass) {
 		this.pass = pass;
 	}
 
-	public StenderRepositorying getPhnumber() {
+	public String getPhnumber() {
 		return phnumber;
 	}
 
-	public void setPhnumber(StenderRepositorying phnumber) {
+	public void setPhnumber(String phnumber) {
 		this.phnumber = phnumber;
 	}
 
-	public StenderRepositorying getCname() {
+	public String getCname() {
 		return cname;
 	}
 
-	public void setCname(StenderRepositorying cname) {
+	public void setCname(String cname) {
 		this.cname = cname;
 	}
 
-	public StenderRepositorying getenderRepositoryegno() {
+	public String getregno() {
 		return regno;
 	}
 
-	public void setenderRepositoryegno(StenderRepositorying regno) {
+	public void setregno(String regno) {
 		this.regno = regno;
 	}
 
-	public StenderRepositorying getenderRepositoryegaddr() {
+	public String getregaddr() {
 		return regaddr;
 	}
 
-	public void setenderRepositoryegaddr(StenderRepositorying regaddr) {
+	public void setregaddr(String regaddr) {
 		this.regaddr = regaddr;
 	}
 
-	public StenderRepositorying getCitizen() {
+	public String getCitizen() {
 		return citizen;
 	}
 
-	public void setCitizen(StenderRepositorying citizen) {
+	public void setCitizen(String citizen) {
 		this.citizen = citizen;
 	}
 
-	public StenderRepositorying getCity() {
+	public String getCity() {
 		return city;
 	}
 
-	public void setCity(StenderRepositorying city) {
+	public void setCity(String city) {
 		this.city = city;
 	}
 
-	public StenderRepositorying getState() {
+	public String getState() {
 		return state;
 	}
 
-	public void setState(StenderRepositorying state) {
+	public void setState(String state) {
 		this.state = state;
 	}
 
-	public StenderRepositorying getPincode() {
+	public String getPincode() {
 		return pincode;
 	}
 
-	public void setPincode(StenderRepositorying pincode) {
+	public void setPincode(String pincode) {
 		this.pincode = pincode;
 	}
 
-	public StenderRepositorying getPannumber() {
+	public String getPannumber() {
 		return pannumber;
 	}
 
-	public void setPannumber(StenderRepositorying pannumber) {
+	public void setPannumber(String pannumber) {
 		this.pannumber = pannumber;
 	}
 
-	public StenderRepositorying getEyear() {
+	public String getEyear() {
 		return eyear;
 	}
 
-	public void setEyear(StenderRepositorying eyear) {
+	public void setEyear(String eyear) {
 		this.eyear = eyear;
 	}
 
-	public StenderRepositorying getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(StenderRepositorying name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public StenderRepositorying getDob() {
+	public String getDob() {
 		return dob;
 	}
 
-	public void setDob(StenderRepositorying dob) {
+	public void setDob(String dob) {
 		this.dob = dob;
 	}
 
-	public StenderRepositorying getDes() {
+	public String getDes() {
 		return des;
 	}
 
-	public void setDes(StenderRepositorying des) {
+	public void setDes(String des) {
 		this.des = des;
 	}
 
-	public StenderRepositorying getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(StenderRepositorying phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 }

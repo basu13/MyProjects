@@ -12,36 +12,35 @@ import javax.persistence.Table;
 public class BidValue {
 
 	@Id
-	@GeneratedValue(stenderRepositoryategy=GenerationType.IDENTITY)
 	@Column(name="idbidtable")
 	private int id;
 	
 	@Column(name="tendervender")
-	private StenderRepositorying tendervender;
+	private String tendervender;
 	
-	public StenderRepositorying getTendervender() {
+	public String getTendervender() {
 		return tendervender;
 	}
-	public void setTendervender(StenderRepositorying tendervender) {
+	public void setTendervender(String tendervender) {
 		this.tendervender = tendervender;
 	}
 	@Column(name= "venderid")
-	private StenderRepositorying venderid;
+	private String venderid;
 	
 	@Column(name= "tenderid")
-	private StenderRepositorying tenderid;
+	private String tenderid;
 	
 	@Column(name= "bidvalue")
 	private int bidvalue;
 	
 	@Column(name="closingdate")
-	private StenderRepositorying closingdate;
+	private String closingdate;
 	
 	
-	public StenderRepositorying getClosingdate() {
+	public String getClosingdate() {
 		return closingdate;
 	}
-	public void setClosingdate(StenderRepositorying closingdate) {
+	public void setClosingdate(String closingdate) {
 		this.closingdate = closingdate;
 	}
 	public int getId() {
@@ -50,16 +49,16 @@ public class BidValue {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public StenderRepositorying getVenderid() {
+	public String getVenderid() {
 		return venderid;
 	}
-	public void setVenderid(StenderRepositorying venderid) {
+	public void setVenderid(String venderid) {
 		this.venderid = venderid;
 	}
-	public StenderRepositorying getTenderid() {
+	public String getTenderid() {
 		return tenderid;
 	}
-	public void setTenderid(StenderRepositorying tenderid) {
+	public void setTenderid(String tenderid) {
 		this.tenderid = tenderid;
 	}
 	public int getBidvalue() {

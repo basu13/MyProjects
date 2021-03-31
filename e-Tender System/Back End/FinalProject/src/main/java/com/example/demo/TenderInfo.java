@@ -12,74 +12,74 @@ import javax.persistence.Table;
 public class TenderInfo {
 	
 	@Id
-	@GeneratedValue(stenderRepositoryategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="idtenderinfo")
 	private int id;
 	
 	@Column(name= "tenderid")
-	private StenderRepositorying tenderid;
+	private String tenderid;
 	
 	@Column(name= "tendername")
-	private StenderRepositorying tendername;
+	private String tendername;
 	
 	@Column(name= "department")
-	private StenderRepositorying department;
+	private String department;
 	
 	@Column(name= "publishdate")
-	private StenderRepositorying publishdate;
+	private String publishdate;
 	
 	@Column(name= "opendate")
-	private StenderRepositorying opendate;
+	private String opendate;
 	
 	@Column(name= "closingdate")
-	private StenderRepositorying closingdate;
+	private String closingdate;
 	
 	@Column(name= "classification")
-	private StenderRepositorying classification;
+	private String classification;
 	
 	@Column(name="status")
-	private StenderRepositorying status;
+	private String status;
 	
 	@Column(name="specification")
-	private StenderRepositorying specification;
+	private String specification;
 	
 	@Column(name="quantity")
-	private StenderRepositorying quantity;
+	private String quantity;
 	
 	@Column(name="base")
-	private StenderRepositorying base;
+	private String base;
 	
 	
 
-	public StenderRepositorying getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(StenderRepositorying status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
-	public StenderRepositorying getSpecification() {
+	public String getSpecification() {
 		return specification;
 	}
 
-	public void setSpecification(StenderRepositorying specification) {
+	public void setSpecification(String specification) {
 		this.specification = specification;
 	}
 
-	public StenderRepositorying getQuantity() {
+	public String getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(StenderRepositorying quantity) {
+	public void setQuantity(String quantity) {
 		this.quantity = quantity;
 	}
 
-	public StenderRepositorying getBase() {
+	public String getBase() {
 		return base;
 	}
 
-	public void setBase(StenderRepositorying base) {
+	public void setBase(String base) {
 		this.base = base;
 	}
 
@@ -91,64 +91,64 @@ public class TenderInfo {
 		this.id = id;
 	}
 
-	public StenderRepositorying getTenderid() {
+	public String getTenderid() {
 		return tenderid;
 	}
 
-	public void setTenderid(StenderRepositorying tenderid) {
+	public void setTenderid(String tenderid) {
 		this.tenderid = tenderid;
 	}
 
-	public StenderRepositorying getTendername() {
+	public String getTendername() {
 		return tendername;
 	}
 
-	public void setTendername(StenderRepositorying tendername) {
+	public void setTendername(String tendername) {
 		this.tendername = tendername;
 	}
 
-	public StenderRepositorying getDepartment() {
+	public String getDepartment() {
 		return department;
 	}
 
-	public void setDepartment(StenderRepositorying department) {
+	public void setDepartment(String department) {
 		this.department = department;
 	}
 
-	public StenderRepositorying getPublishdate() {
+	public String getPublishdate() {
 		return publishdate;
 	}
 
-	public void setPublishdate(StenderRepositorying publishdate) {
+	public void setPublishdate(String publishdate) {
 		this.publishdate = publishdate;
 	}
 
-	public StenderRepositorying getOpendate() {
+	public String getOpendate() {
 		return opendate;
 	}
 
-	public void setOpendate(StenderRepositorying opendate) {
+	public void setOpendate(String opendate) {
 		this.opendate = opendate;
 	}
 
-	public StenderRepositorying getClosingdate() {
+	public String getClosingdate() {
 		return closingdate;
 	}
 
-	public void setClosingdate(StenderRepositorying closingdate) {
+	public void setClosingdate(String closingdate) {
 		this.closingdate = closingdate;
 	}
 
-	public StenderRepositorying getClassification() {
+	public String getClassification() {
 		return classification;
 	}
 
-	public void setClassification(StenderRepositorying classification) {
+	public void setClassification(String classification) {
 		this.classification = classification;
 	}
 
 	@Override
-	public StenderRepositorying toStenderRepositorying() {
+	public String toString() {
 		return "TenderInfo [id=" + id + ", tenderid=" + tenderid + ", tendername=" + tendername + ", department="
 				+ department + ", publishdate=" + publishdate + ", opendate=" + opendate + ", closingdate="
 				+ closingdate + ", classification=" + classification + "]";
