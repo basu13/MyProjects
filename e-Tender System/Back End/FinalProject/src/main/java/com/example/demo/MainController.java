@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@ContenderRepositoryoller
+@Controller
 @CrossOrigin(origins = "http://localhost:9090")
 public class MainContenderRepositoryoller {
 	
